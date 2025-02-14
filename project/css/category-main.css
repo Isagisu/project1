@@ -31,6 +31,12 @@
   border-radius: 0.5rem;
   cursor: pointer;
 }
+.category h1{
+  font-size: 2rem;
+}
+.category p{
+  
+}
 
 .main-wrap .content .content-right {
   width: 19.9%;

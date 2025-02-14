@@ -24,12 +24,14 @@ require "Function.php";
   <link rel="stylesheet" href="./css/topnav.css"> <!-- topnav     -->
   <link rel="stylesheet" href="./css/sidebar.css"> <!-- sidebar    -->
   <link rel="stylesheet" href="./css/main.css"> <!-- main       -->
+  <link rel="stylesheet" href="./css/category-main.css">
   <!-- component style  -->
   <link rel="stylesheet" href="./css/article.css">
   <link rel="stylesheet" href="./css/board.css">
   <link rel="stylesheet" href="./css/slider.css">
   <link rel="stylesheet" href="./css/notifications.css">
   <link rel="stylesheet" href="./css/dropdown.css">
+
   <!-- SweetAlert2  -->
   <link href='https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css' rel='stylesheet'>
   <!-- <link rel="stylesheet" href="./css/loading.css"> -->
@@ -65,34 +67,24 @@ require "Function.php";
       <div class="main-content">
         <div class="main-wrap">
        
-
           <div class="content">
             <div class="content-left">
-              <?php
-              $newarticle = $link->query('SELECT * FROM `posts` ORDER BY `update_time` DESC LIMIT 8');
-
-              if ($newarticle->rowCount() > 0) {
-                while ($row = $newarticle->fetch(PDO::FETCH_ASSOC)) {
-              ?>
-                  <a href="#" class="new-article">
-                    <h2><?php echo $row["title"] ?></h2>
-                    <p><?php echo $row["content"] ?></p>
-                    <div class="icon-group">
-                      <div class="icon-group-left">
-                        <i class="fa-solid fa-thumbs-up"></i>
-                        <i class="fa-solid fa-thumbs-down"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-share"></i>
-                      </div>
-                      <div class="icon-group-right">
-                        <i class="fa-solid fa-paw"></i>
-                        <i class="fa-solid fa-bookmark"></i>
-                      </div>
-                    </div>
-                  </a>
-              <?php }
-              } ?>
+              <div class="category-group">
+                <div class="category">
+                  <h2>追星板</h2>
+                  <p>歡迎來到追星板！✨ 這裡是粉絲們交流的天地，不管你喜歡韓團、日星、歐美偶像，還是動漫聲優，都可以在這裡分享最新資訊、討論舞台表現、聊聊愛豆的趣事，一起為偶像應援！💖 快來加入我們吧！</p>
+                </div>
+                <div class="category">
+                  <h2>追星板</h2>
+                  <p>歡迎來到追星板！✨ 這裡是粉絲們交流的天地，不管你喜歡韓團、日星、歐美偶像，還是動漫聲優，都可以在這裡分享最新資訊、討論舞台表現、聊聊愛豆的趣事，一起為偶像應援！💖 快來加入我們吧！</p>
+                </div>
+                <div class="category">
+                  <h2>追星板</h2>
+                  <p>歡迎來到追星板！✨ 這裡是粉絲們交流的天地，不管你喜歡韓團、日星、歐美偶像，還是動漫聲優，都可以在這裡分享最新資訊、討論舞台表現、聊聊愛豆的趣事，一起為偶像應援！💖 快來加入我們吧！</p>
+                </div>
+              </div>
             </div> <!-- .content-left -->
+            
             <div class="content-right">
               <div class="board">
                 <div class="board-heading">

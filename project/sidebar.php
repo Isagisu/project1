@@ -21,7 +21,7 @@
       <span>看板分類</span>
     </a>	  
 	<?php if (isset($_SESSION["login_session"]) && $_SESSION["login_session"] == true) {?>
-    <a href="/profile">
+    <a href="./profile.php">
       <i class="fa-solid fa-users"></i>
       <span>會員中心</span>
     </a>	 

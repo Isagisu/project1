@@ -1,0 +1,115 @@
+.slider {
+  position: relative;
+  max-width: 100%;
+  width: 100dvw;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider .slider-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: max-content;
+  height: 100%;
+  transition: all 1200ms ease;
+}
+
+.slider .slider-list img {
+  max-width: 100%;
+  width: 100dvw;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slider-btns {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-btns button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #33333380;
+  color: #efefef;
+  border: none;
+  font-family: monospace;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.slider-btns button:active {
+  transform: scale(0.9);
+}
+
+.dots {
+  position: absolute;
+  bottom: 0.625rem;
+  color: #fff;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.dots li {
+  list-style: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #cccccc80;
+  border-radius: 0.75rem;
+  margin: 1.25rem;
+  transition: all 500ms linear;
+  cursor: pointer;
+}
+
+.dots li.active {
+  width: 3.125rem;
+}
+
+/* 側邊欄隱藏後，原先圖片只設定 max-width: 89.9%，會有空白區塊 */
+@media screen and (max-width: 1200px) {
+  .slider .slider-list img {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider {
+    height: 250px;
+  }
+
+  .slider .slider-list img {
+    max-width: 100%;
+  }
+
+  .dots li {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 0.625rem;
+  }
+}
+@keyframes slider_ani {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slider_ani {
+  animation-iteration-count: infinite;
+  animation: slider_ani 0.8s ease-out;
+}

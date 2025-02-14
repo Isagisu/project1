@@ -1,0 +1,190 @@
+.notifications {
+  display: none;
+  width: 350px;
+  position: fixed;
+  top: 80px;
+  left: 90vw;
+  text-align: center;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: var(--nottification-bg);
+  backdrop-filter: blur(35px);
+  overflow-x: hidden;
+}
+.notifications h1 {
+  background: var(--notification-h1);
+  text-align: center;
+  padding: 10px;
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0px 1px rgba(255, 255, 255, 0.8);
+}
+.notification div {
+  position: relative;
+}
+.notification i {
+  margin-left: -6px;
+}
+.notification span {
+  position: absolute;
+  right: 16px;
+  top: 2px;
+  padding: 4px 3px 3px;
+  font-size: 10px;
+}
+/* 通知圖示 */
+.notifications-icon {
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+}
+/* #notificationIcon { */
+  /* margin-right: -10px; */
+/* } */
+/* 動畫 */
+.notifications.active {
+  display: block;
+  animation: notification 0.3s ease;
+}
+.notifications::after {
+  overflow: hidden;
+}
+
+.notifications-card {
+  display: flex;
+  align-items: center;
+  margin-top: -12px;
+  box-shadow: 0px 1px rgba(255, 255, 255, 0.8);
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.notification-content {
+  padding: 15px;
+}
+.notifications-card:hover {
+  background-color: var(--primary-bgc);
+}
+.notification-content h3 {
+  padding-top: -5px;
+}
+
+.notification-content p {
+  padding-top: -5px;
+}
+
+.notification-content span {
+  padding-top: 5px;
+  display: flex;
+  margin-top: -5px;
+  text-indent: 2px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #999;
+}
+
+.view-all-btn {
+  display: block;
+  text-align: center;
+  padding: 10px 50px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+a.view-all-btn {
+  color: var(--primary-txt);
+}
+.view-all-btn i {
+  margin: 0 0 0 3px;
+}
+.view-allami-btn:hover {
+  color: #0050a8;
+}
+/* 通知欄彈出動畫 */
+@keyframes notification {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 通知數量淡出動畫 */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 增加淡出動畫效果 */
+.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+/* =============================================== */
+/* ====================       ==================== */
+/* ==================== media ==================== */
+/* ====================       ==================== */
+/* =============================================== */
+/* @media screen and (max-width: 1200px) { */
+  /* #notifications { */
+    /* width: 30vw; */
+    /* left: 84.5%; */
+  /* } */
+/* } */
+/* @media screen and (max-width: 992px) { */
+  /* #notifications { */
+    /* width: 30vw; */
+    /* left: 81%; */
+  /* } */
+/* } */
+/* @media screen and (max-width: 768px) { */
+  /* #notifications { */
+    /* width: 30vw; */
+    /* left: 83%; */
+  /* } */
+/* } */
+/* @media screen and (max-width: 590px) { */
+  /* #notifications { */
+    /* width: 30vw; */
+    /* top: 110px; */
+    /* left: 75%; */
+  /* } */
+/* } */
+/* 桌機 (電腦) - 992px 以上 */
+@media screen and (min-width: 993px) {
+  #notifications {
+    width: 22vw;
+    left: 88%;
+  }
+}
+
+/* 平板 - 768px 到 992px */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #notifications {
+    width: 30vw;
+    left: 83%;
+  }
+}
+
+/* 手機 - 767px 以下 */
+@media screen and (max-width: 767px) {
+  #notifications {
+    width: 80vw;
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(35px);
+  }
+}

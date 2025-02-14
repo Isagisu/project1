@@ -1,0 +1,329 @@
+.topnav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0.625rem 2.5rem;
+  background: var(--topnav-bgc);
+  color: var(--topnav-txt);
+  border-bottom: 0.25rem solid var(--primary-bgc);
+  z-index: 99;
+  overflow: hidden;
+}
+.topnavhide{
+	transform:translateY(-350px);
+	opacity:0;
+	transition:0.8s ease;
+}
+.topnavshow{
+	animation:topnavshow 0.5s ease;
+}
+@keyframes topnavshow {
+  from {
+    opacity: 0;
+    transform: translateY(-350px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================== */
+/* ====================      ==================== */
+/* ==================== left ==================== */
+/* ====================      ==================== */
+/* ============================================== */
+.nav-left {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.nav-left .logo {
+  /* width: fit-content; */
+  width:70px;
+  height: auto;
+  text-align: center;
+}
+
+.nav-left .logo a {
+  width: fit-content;
+  height: auto;
+  display: block;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+
+.nav-left .logo a:hover {
+  background: #ffc0cb80;
+}
+
+.nav-left .logo a img {
+  width: 25px;
+  height: 60px;
+}
+
+/* ================================================ */
+/* ====================        ==================== */
+/* ==================== center ==================== */
+/* ====================        ==================== */
+/* ================================================ */
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-center .search {
+  width: 100%;
+}
+
+.search form label {
+  display: flex;
+  border-radius: 0.75rem;
+}
+
+.search input {
+  width: 50%;
+  padding: 0.5rem 0.75rem;
+  margin-left: 25%;
+  background: var(--secondary-bgc);
+  font-size: 1.25rem;
+  outline: none;
+  border: 1px solid var(--input-clr);
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  transition: all 500ms linear;
+  color: var(--primary-txt);
+}
+
+.search input:focus {
+  width: 100%;
+  margin: 0;
+  border: 1px solid var(--input-clr);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search form label button {
+  border: 0;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background: var(--input-clr);
+  color: #ffffff;
+  border-radius: 0.25rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: all 500ms linear;
+}
+
+.search i {
+  cursor: pointer;
+}
+
+/* =============================================== */
+/* ====================       ==================== */
+/* ==================== right ==================== */
+/* ====================       ==================== */
+/* =============================================== */
+.nav-right {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-right .nav-group {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-right .nav-group button {
+  background: var(--secondary-bgc);
+  border: 0;
+  outline: 0;
+  padding: 0;
+}
+
+.nav-right .nav-group .notification i,
+.nav-right .nav-group .user i,
+.nav-right .nav-group .theme i,
+.nav-right .nav-group .sm-search i {
+  position: relative;
+  cursor: pointer;
+  padding: 1rem;
+  color: var(--primary-txt);
+  transition: 500ms;
+  font-size: 16px;
+}
+
+.nav-right .nav-group .notification,
+.nav-right .nav-group .user,
+.nav-right .nav-group .theme,
+.nav-right .nav-group .sm-search,
+.nav-right .nav-group .userimg {
+  text-align: center;
+  width: 60px;
+  cursor: pointer;
+}
+
+.nav-right .nav-group .sm-search {
+  display: none;
+}
+
+.nav-right .nav-group .notification:hover i {
+  color: var(--notification-i-clr);
+}
+
+.nav-right .nav-group .user:hover i {
+  color: var(--user-i-clr);
+}
+
+.nav-right .nav-group .theme:hover i {
+  color: var(--theme-i-clr);
+}
+.nav-right .nav-group .sm-search:hover i {
+  color: var(--input-clr);
+}
+
+/* icon 圖示的底線 */
+.nav-right .nav-group i::after {
+  content: "";
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  transition: 500ms ease;
+  opacity: 0;
+}
+
+.nav-right .nav-group .notification:hover i::after {
+  background: var(--notification-i-clr);
+  bottom: 0;
+  opacity: 1;
+}
+
+.nav-right .nav-group .user:hover i::after {
+  background: var(--user-i-clr);
+  bottom: 0;
+  opacity: 1;
+}
+
+.nav-right .nav-group .theme:hover i::after {
+  background: var(--theme-i-clr);
+  bottom: 0;
+  opacity: 1;
+}
+.nav-right .nav-group .sm-search:hover i::after {
+  background: var(--input-clr);
+  bottom: 0;
+  opacity: 1;
+}
+
+/* 搜尋框的樣式 (預設隱藏) */
+.mobile-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(231, 162, 162, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: row;
+  gap: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-105%);
+}
+
+/* 顯示搜尋框 */
+.mobile-search.active {
+  transform: translateY(0);
+}
+
+/* 搜尋框內的輸入框 */
+.mobile-search input {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+}
+.mobile-search input:focus,
+.mobile-search textarea:focus {
+  outline: none;
+  border: 2px solid #eda7a7; /* 變成粉色邊框 */
+  box-shadow: 0 0 5px rgba(248, 185, 190, 0.8);
+  transition: all 0.1s ease-in-out; /* 平滑過渡效果 */
+}
+
+/* 關閉按鈕 */
+.mobile-search .close-search {
+  background: transparent !important;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* =============================================== */
+/* ====================       ==================== */
+/* ==================== media ==================== */
+/* ====================       ==================== */
+/* =============================================== */
+@media screen and (min-width: 769px) {
+  .mobile-search {
+    transform: translateY(-105%) !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-center .search {
+    display: none;
+  }
+  .nav-right .nav-group .sm-search {
+    display: flex;
+    padding-left: 12px;
+  }
+
+  .nav-right .nav-group {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 0.01em;
+  }
+
+  .nav-right .nav-group .notification i,
+  .nav-right .nav-group .theme i,
+  .nav-right .nav-group .sm-search i {
+    padding: 0.5rem 0.1rem;
+  }
+  .nav-right .nav-group .user i {
+    padding: 0.5rem 0.5rem;
+  }
+}
+@media screen and (max-width: 590px) {
+  .nav-center .search {
+    display: none;
+  }
+  .nav-right .nav-group .sm-search {
+    display: flex;
+    padding-left: 12px;
+  }
+}

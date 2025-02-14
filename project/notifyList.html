@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>通知列表</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+      background-color: #ccc;
+    }
+
+    #root {
+      max-width: 1200px;
+      margin: 0px auto;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 8px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      width: 6rem;
+      display: block;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      background-color: #666;
+      color: #ff0;
+      transition: all 0.5s;
+    }
+
+    .page {
+      background-color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      margin-top: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2 5 rgba(0, 0, 0, 0.3);
+    }
+
+    .page h1 {
+      color: #963;
+    }
+
+    .page p {
+      color: #633;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const All = () =>
+    (
+      <div className="page">
+        <h1>測試通知</h1>
+        <p>CREATIVE MORE DESIGN</p>
+      </div>
+    )
+
+    const About = () =>
+    (
+      <div className="page">
+        <h1>About Our</h1>
+        <p>Best Team For Business</p>
+      </div>
+    )
+
+    const Products = () =>
+    (
+      <div className="page">
+        <h1>MORE CREATE PORTFOLIO</h1>
+        <p>SHOW OUR ABILITY</p>
+      </div>
+    )
+
+    const Contact = () =>
+    (
+      <div className="page">
+        <h1>Contact infomation</h1>
+        <p>More...</p>
+      </div>
+    )
+
+    const Main = () => {
+      const [page, setPage] = React.useState('home');
+      const navigate = (newPage) => {
+        setPage(newPage);
+        window.history.pushState(null, "", `/${newPage}`)
+      }
+      React.useEffect(() => {
+        const handlePopState = () => {
+          const path = window.location.pathname.slice(1) || 'home'
+          setPage(path)
+        }
+        window.addEventListener('popstate', handlePopState)
+        return () => window.removeEventListener('popstate', handlePopState)
+      }, [])
+      return (
+        <div>
+          <nav>
+            <ul>
+              <li><a href="/" onClick={(e) => { e.preventDefault(); navigate('all') }}>全部</a></li>
+              <li><a href="/" onClick={(e) => { e.preventDefault(); navigate('about') }}>About</a></li>
+              <li><a href="/" onClick={(e) => { e.preventDefault(); navigate('products') }}>Products</a></li>
+              <li><a href="/" onClick={(e) => { e.preventDefault(); navigate('contact') }}>Contact</a></li>
+            </ul>
+          </nav>
+          {page === 'all' && <All />}
+          {page === 'about' && <About />}
+          {page === 'products' && <Products />}
+          {page === 'contact' && <Contact />}
+        </div>
+      )
+    }
+    ReactDOM.render(<Main />, document.getElementById("root"));
+  </script>
+</body>
+
+</html>

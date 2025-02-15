@@ -23,7 +23,7 @@ require "Function.php";
   <link rel="stylesheet" href="./css/style.css"> <!-- base       -->
   <link rel="stylesheet" href="./css/topnav.css"> <!-- topnav     -->
   <link rel="stylesheet" href="./css/sidebar.css"> <!-- sidebar    -->
-  <link rel="stylesheet" href="./css/main.css"> <!-- main       -->
+  <!-- <link rel="stylesheet" href="./css/main.css"> main       -->
   <link rel="stylesheet" href="./css/category-main.css">
   <!-- component style  -->
   <link rel="stylesheet" href="./css/article.css">
@@ -71,16 +71,67 @@ require "Function.php";
             <div class="content-left">
               <div class="category-group">
                 <div class="category">
-                  <h2>追星板</h2>
-                  <p>歡迎來到追星板！✨ 這裡是粉絲們交流的天地，不管你喜歡韓團、日星、歐美偶像，還是動漫聲優，都可以在這裡分享最新資訊、討論舞台表現、聊聊愛豆的趣事，一起為偶像應援！💖 快來加入我們吧！</p>
+                  <div class="category-img">
+                    <img src="./img/category/04.jpg" alt="">
+                  </div>
+                  <div class="category-content">
+                    <h2>生活板</h2>
+                    <p>生活瑣事、日常趣事，這裡都能聊！📢 無論是美食分享、旅遊攻略、理財心得，還是居家收納、時間管理，都歡迎來討論交流，讓生活變得更美好！✨</p>
+                  </div>
+                </div>
+                 <div class="category">
+                  <div class="category-img">
+                   <img src="./img/category/07.jpg" alt="">
+                  </div>
+                  <div class="category-content">
+                    <h2>3c板</h2>
+                    <p>最新科技、手機、筆電、智慧家電，這裡通通有！📱💻 無論是新品開箱、選購指南，還是軟硬體問題討論，快來和大家一起交流你的 3C 生活！</p>
+                  </div>
                 </div>
                 <div class="category">
-                  <h2>追星板</h2>
-                  <p>歡迎來到追星板！✨ 這裡是粉絲們交流的天地，不管你喜歡韓團、日星、歐美偶像，還是動漫聲優，都可以在這裡分享最新資訊、討論舞台表現、聊聊愛豆的趣事，一起為偶像應援！💖 快來加入我們吧！</p>
+                  <div class="category-img">
+                    <img src="./img/category/03.jpg" alt="">
+                  </div>
+                  <div class="category-content">
+                    <h2>遊戲板</h2>
+                    <p>不管是主機、PC、手遊，還是懷舊經典，這裡都是玩家的天堂！🎮💥 來分享攻略、戰績、心得，找戰友組隊，或是討論最新遊戲資訊，一起享受遊戲的樂趣！</p>
+                  </div>
                 </div>
-                <div class="category">
-                  <h2>追星板</h2>
-                  <p>歡迎來到追星板！✨ 這裡是粉絲們交流的天地，不管你喜歡韓團、日星、歐美偶像，還是動漫聲優，都可以在這裡分享最新資訊、討論舞台表現、聊聊愛豆的趣事，一起為偶像應援！💖 快來加入我們吧！</p>
+                  <div class="category">
+                  <div class="category-img">
+                     <img src="./img/category/05.jpg" alt="">
+                  </div>
+                  <div class="category-content">
+                    <h2>動漫板</h2>
+                    <p>二次元愛好者集合！📺🎨 這裡可以聊經典神作、推薦冷門佳作、討論劇情發展，也能分享動漫周邊、角色應援，無論新番還是懷舊動畫，都歡迎來交流！</p>
+                  </div>
+                </div>
+                  <div class="category">
+                  <div class="category-img">
+                    <img src="./img/category/08.jpg" alt="">
+                  </div>
+                  <div class="category-content">
+                    <h2>感情板</h2>
+                    <p>戀愛煩惱、曖昧心事、友情困惑，這裡是你的樹洞與軍師！💌💕 無論是甜蜜放閃還是情感疑難雜症，都可以來討論，讓我們一起用心傾聽，陪你走過心動與心痛！</p>
+                  </div>
+                </div>
+                  <div class="category">
+                  <div class="category-img">
+                   <img src="./img/category/10.jpg" alt="">
+                  </div>
+                  <div class="category-content">
+                    <h2>追星板</h2>
+                    <p>歡迎來到追星板！✨ 這裡是粉絲們交流的天地，不管你喜歡韓團、日星、歐美偶像，還是動漫聲優，都可以在這裡分享最新資訊、討論舞台表現、聊聊愛豆的趣事，一起為偶像應援！💖 快來加入我們吧！</p>
+                  </div>
+                </div>
+                  <div class="category">
+                  <div class="category-img">
+                     <img src="./img/category/02.jpg" alt="">
+                  </div>
+                  <div class="category-content">
+                    <h2>影劇板</h2>
+                    <p>電影、影集、綜藝，這裡是觀影迷的交流基地！🎬📺 熱門大片、冷門佳片、追劇心得，還有經典回顧與影評分析，快來一起討論你的必看清單！🍿</p>
+                  </div>
                 </div>
               </div>
             </div> <!-- .content-left -->

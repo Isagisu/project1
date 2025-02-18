@@ -26,7 +26,7 @@ require "Function.php";
   <!-- <link rel="stylesheet" href="./css/main.css"> main       -->
   <link rel="stylesheet" href="./css/category-main.css">
   <!-- component style  -->
-  <link rel="stylesheet" href="./css/article.css">
+  <!-- <link rel="stylesheet" href="./css/article.css"> -->
   <link rel="stylesheet" href="./css/board.css">
   <link rel="stylesheet" href="./css/slider.css">
   <link rel="stylesheet" href="./css/notifications.css">
@@ -64,6 +64,7 @@ require "Function.php";
 
     <main class="main">
       <?php require("sidebar.php") ?>
+
       <div class="main-content">
         <div class="main-wrap">
        
@@ -127,7 +128,7 @@ require "Function.php";
                 </div>
                   <div class="category">
                   <div class="category-img">
-                   <img src="./img/category/10.jpg" alt="">
+                   <img src="./img/category/12.jpg" alt="">
                   </div>
                   <div class="category-content">
                     <h2>追星板</h2>
@@ -136,6 +137,7 @@ require "Function.php";
                    <i class="fa-regular fa-bookmark"></i></div>
                   </div>
                 </div>
+
                   <div class="category">
                   <div class="category-img">
                      <img src="./img/category/02.jpg" alt="">
@@ -145,11 +147,23 @@ require "Function.php";
                     <p>電影、影集、綜藝，這裡是觀影迷的交流基地！🎬📺 熱門大片、冷門佳片、追劇心得，還有經典回顧與影評分析，快來一起討論你的必看清單！🍿</p>
                    <div class="category-btn"><p><i class="fa-solid fa-fire"></i><span>13742</span></p>
                    <i class="fa-regular fa-bookmark"></i></div>
-
                   </div>
                 </div>
-              </div>
+
+              </div><!-- .category-group-->
+
+              <div class="category-page">
+                <a href="#" class="prev"><i class="fa-solid fa-angle-left"></i></a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#" class="next"><i class="fa-solid fa-angle-right"></i></a>
+              </div> <!-- .pagination -->
+
             </div> <!-- .content-left -->
+      
           </div> <!-- .content -->
 
 

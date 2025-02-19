@@ -21,17 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
 	moon.classList.remove("fa-moon");
     moon.classList.add("fa-sun"); //移除月亮標誌，改為太陽
     switchButton.checked = true; //確認有勾選(深色模式)
-  } else {
+  } 
+  else {
     document.body.classList.add("light");
     root.style.setProperty("--primary-txt", "#555");
     root.style.setProperty("--primary-bgc", "#f0f0f0");
     root.style.setProperty("--secondary-bgc", "#fff");
     root.style.setProperty("--card-hover", "#ffeeee");
-	root.style.setProperty("--notification-h1", "linear-gradient(90deg,rgba(205, 255, 237, 0.9) 0%,rgba(0, 172, 255, 0.9) 100%");
-	root.style.setProperty("--nottification-bg", "rgba(255, 255, 255, 0.8)");
-	root.style.setProperty("--user-bg", "rgba(255, 255, 255, 0.8)");
-	root.style.setProperty("--userinfo-txt", "#4876FF");
-	root.style.setProperty("--border-clr", "#e5e5e5");
+	  root.style.setProperty("--notification-h1", "linear-gradient(90deg,rgba(205, 255, 237, 0.9) 0%,rgba(0, 172, 255, 0.9) 100%");
+	  root.style.setProperty("--nottification-bg", "rgba(255, 255, 255, 0.8)");
+	  root.style.setProperty("--user-bg", "rgba(255, 255, 255, 0.8)");
+	  root.style.setProperty("--userinfo-txt", "#4876FF");
+	  root.style.setProperty("--border-clr", "#e5e5e5");
 	 
     moon.classList.remove("fa-sun");
     moon.classList.add("fa-moon");
@@ -54,7 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	  root.style.setProperty("--border-clr", "#454545");
       moon.classList.remove("fa-moon");
       moon.classList.add("fa-sun");
-    } else {
+    }
+     else {
       document.body.classList.remove("dark");
       document.body.classList.add("light");
       localStorage.setItem("theme", "light");
@@ -62,10 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
       root.style.setProperty("--primary-bgc", "#f0f0f0");
       root.style.setProperty("--secondary-bgc", "#fff");
       root.style.setProperty("--card-hover", "#ffeeee");
-	  root.style.setProperty("--notification-h1", "linear-gradient(90deg,rgba(205, 255, 237, 0.9) 0%,rgba(0, 172, 255, 0.9) 100%");
-	  root.style.setProperty("--nottification-bg", "rgba(255, 255, 255, 0.8)");
-	  root.style.setProperty("--userinfo-txt", "#4876FF");
-	  root.style.setProperty("--border-clr", "#e5e5e5");
+	    root.style.setProperty("--notification-h1", "linear-gradient(90deg,rgba(205, 255, 237, 0.9) 0%,rgba(0, 172, 255, 0.9) 100%");
+	    root.style.setProperty("--nottification-bg", "rgba(255, 255, 255, 0.8)");
+	    root.style.setProperty("--userinfo-txt", "#4876FF");
+	    root.style.setProperty("--border-clr", "#e5e5e5");
       moon.classList.remove("fa-sun");
       moon.classList.add("fa-moon");
     }

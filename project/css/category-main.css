@@ -34,21 +34,7 @@
   border-radius: 0.5rem;
   cursor: pointer;
 }
-<<<<<<< HEAD
-.category h1{
-  font-size: 2rem;
-}
-.category p{
-  
-}
-
-.main-wrap .content .content-right {
-  width: 19.9%;
-  height: fit-content;
-  padding: 1rem;
-=======
 .category .category-img {
->>>>>>> 57d722deef7327e0c526bbef25106da68623956b
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,11 +85,18 @@
 }
 .content-left .category-page {
   margin: 2rem;
-  display: inline-flex;
-  list-style: none;
-  align-items: center;
+  padding-right: 10rem;
+  display: flex;
+  justify-content: center;
+}
+.content-left .category-page a {
+  background: #fff;
   color: var(--primary-txt);
-  border: 2px solid;
+  border: 2px solid lightgray;
+  border-radius: 0.5rem;
+  margin-right: 0.2rem;
+  padding: 0.8rem;
+  text-decoration: none;
 }
 /* =============================================== */
 /* ====================       ==================== */
@@ -126,6 +119,9 @@
     max-width: 100%;
     gap: 1rem;
   }
+  .content-left .category-page {
+    padding: 0;
+                                                                                                                  }
 }
 @media screen and (max-width: 768px) {
   .main-wrap .content .content-left {
@@ -146,7 +142,7 @@
     animation: content-left 0.8s ease-in-out forwards;
   }
 }
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 394px) {
   .category-group .category {
     grid-template-columns: 1fr;
   }
@@ -167,6 +163,10 @@
   .category-btn > i {
     font-size: 1.2rem;
     padding: 0 0.5rem 0.2rem 0;
+  }
+  .content-left .category-page {
+    padding: 0;
+    padding-left: 0.3rem;
   }
 }
 /* 左邊區塊滑動動畫 */

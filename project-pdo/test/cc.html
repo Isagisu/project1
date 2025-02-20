@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳號驗證</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            text-align: center;     
+            width: 100%;
+        }
+        .verification-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 18px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .verification-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>親愛的用戶，感謝您註冊本平台會員。</h1>
+        <a href="#" class="verification-link" id="verificationLink">點擊此處完成驗證</a>
+        <footer>
+            <p>©2025小組專題</p>
+        </footer>
+    </div>
+
+    <script>
+        // 這裡可以用後端生成驗證碼，這裡假設為78914
+        const verificationCode = '78914';
+        const verificationLink = document.getElementById('verificationLink');
+
+        // 動態設定連結
+        verificationLink.href = `auth/verification.php?code=${verificationCode}`;
+    </script>
+</body>
+</html>

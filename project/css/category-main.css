@@ -1,3 +1,6 @@
+a {
+  text-decoration: none;
+}
 .main-wrap .content {
   display: flex;
   max-width: 100%;
@@ -33,7 +36,13 @@
   align-items: center;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.category-group .category:hover {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
 .category .category-img {
   display: flex;
   justify-content: center;
@@ -79,9 +88,19 @@
 }
 .category-btn > i {
   margin-left: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   color: var(--primary-txt);
   font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+/* 滑鼠懸停時變成實心 */
+.category-btn > i:hover {
+  color: rgba(226, 32, 32, 0.849);
+}
+
+/* 點擊後變成實心 */
+.bookmark-icon.fa-solid {
+  color: rgba(226, 32, 32, 0.849);
 }
 .content-left .category-page {
   margin: 2rem;
@@ -121,7 +140,7 @@
   }
   .content-left .category-page {
     padding: 0;
-                                                                                                                  }
+  }
 }
 @media screen and (max-width: 768px) {
   .main-wrap .content .content-left {

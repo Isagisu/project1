@@ -181,7 +181,7 @@ require "Function.php";
   <script src="./js/announcement.js"></script>
   <script src="./js/new-carousel.js"></script>
   <script src="./js/script.js"></script>
-  <script src="./js/lightDark_mood.js"></script>
+  <script src="./js/lightDark_mood-1.js"></script>
   <script src="./js/burger-sidebar.js"></script>
   <script src="./js/mobile-search.js"></script>
   <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js'></script>

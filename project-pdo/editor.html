@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://cdn.tiny.cloud/1/31wj4q9xw2l5kj1bq947og1moxs0xrn8qashjlhovmq3xldb/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+	  tinymce.init({
+	  selector: '#mytextarea', // 指定要轉換的 textarea
+	  language: 'zh_TW', // 語言設定，繁體中文
+	  height: 500, // 編輯器高度
+	  plugins: 'image link code lists table media advlist fullscreen', // 插件 (功能擴展)
+	  toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image media | code fullscreen', // 工具列按鈕配置
+	  menubar: true, // 是否顯示功能表列
+	  branding: false, // 隱藏 "Powered by TinyMCE"
+	  images_upload_url: 'upload.php', // 圖片上傳處理 API
+	  automatic_uploads: true, // 自動上傳圖片
+	  file_picker_types: 'image', // 限定檔案選擇器類型
+	  image_title: true, // 圖片標題
+	  file_picker_callback: function(cb, value, meta) {
+		// 自訂檔案選擇器 (例如打開你的檔案上傳視窗)
+		let input = document.createElement('input');
+		input.setAttribute('type', 'file');
+		input.setAttribute('accept', 'image/*');
+		input.onchange = function() {
+		  let file = this.files[0];
+		  let reader = new FileReader();
+		  reader.onload = function() {
+			let id = 'blobid' + (new Date()).getTime();
+			let blobCache = tinymce.activeEditor.editorUpload.blobCache;
+			let base64 = reader.result.split(',')[1];
+			let blobInfo = blobCache.create(id, file, base64);
+			blobCache.add(blobInfo);
+			cb(blobInfo.blobUri(), { title: file.name });
+		  };
+		  reader.readAsDataURL(file);
+		};
+		input.click();
+	  },
+	  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }', // 自訂編輯器內文樣式
+	  paste_data_images: true, // 允許貼上圖片
+	  resize: true, // 啟用拖曳調整大小
+	  statusbar: true, // 顯示底部狀態列
+	});
+
+    </script>
+  </head>
+
+  <body>
+    <form method="post">
+      <textarea id="mytextarea">Hello, World!</textarea>
+    </form>
+  </body>
+</html>

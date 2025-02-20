@@ -1,0 +1,138 @@
+.board {
+  width: 100%;
+  min-width: 220px;
+  background: var(--secondary-bgc);
+  border: 3px solid #e24f4f;
+  border-radius: 0.5rem;
+  box-shadow: 4px 4px #800000;
+  overflow: hidden;
+  color: var(--primary-txt);
+  transition: all 0.5s;
+}
+
+.board .board-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  background: #e24f4f;
+  color: #fff;
+}
+
+.board ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.board ul li {
+  width: 100%;
+  padding: 0.625rem;
+}
+
+.board ul li:hover {
+  background: #ffecef80;
+}
+
+.board-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.board-item .date {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--primary-txt);
+  font-family: monospace;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  transition: all 0.8s;
+}
+
+.board-item .note {
+  padding-left: 0.25rem;
+  letter-spacing: 0.125rem;
+}
+
+.note.system {
+  border-left: 0.5rem solid #8f8f8f;
+}
+
+.note.selected {
+  border-left: 0.5rem solid #ffcc00;
+}
+
+.board-item a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  margin-left: 1rem;
+  padding: 0.25rem;
+  color: var(--primary-txt);
+  line-height: 1.5;
+  word-break: keep-all;
+  transition: all 0.8s;
+}
+
+.board-item a:hover {
+  text-decoration: #e24f4f wavy underline;
+}
+
+.weather {
+  width: 100%;
+  min-width: 220px;
+  background: var(--secondary-bgc);
+  border: 3px solid #00a7ad;
+  border-radius: 0.5rem;
+  box-shadow: 4px 4px #003b3d;
+  color: var(--primary-txt);
+  transition: all 0.5s;
+}
+
+.weather-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  background: #00a7ad;
+  color: #fff;
+}
+
+.weather-heading h2 {
+  margin-left: 50px;
+}
+
+/* =============================================== */
+/* ====================       ==================== */
+/* ==================== media ==================== */
+/* ====================       ==================== */
+/* =============================================== */
+/* @media screen and (max-width: 768px) { */
+/* .board { */
+/* border-left: none; */
+/* border-right: none; */
+/* border-radius: 0; */
+/* box-shadow: 0 4px #800000; */
+/* text-align: center; */
+/* } */
+
+/* .weather { */
+/* border-left: none; */
+/* border-right: none; */
+/* box-shadow: 0 4px #003b3d; */
+/* } */
+/* } */
+/* @media screen and (max-width: 1200px) {
+  .board {
+    all: unset;
+    min-width: 0px;
+  }
+
+  .weather {
+    all: unset;
+    min-width: 0px;
+  }
+} */

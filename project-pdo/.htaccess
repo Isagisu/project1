@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /
+
+# 這條規則將 "/index.php" 重寫為 "/"
+RewriteCond %{THE_REQUEST} \ /index\.php\ HTTP/
+RewriteRule ^index\.php$ / [R=301,L]
+
+# 允許不帶 .php 訪問所有 PHP 檔案
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/.]+)$ $1.php [L]
+
+# 404 頁面處理
+ErrorDocument 404 /templates/404.html

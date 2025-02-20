@@ -1,0 +1,211 @@
+.sidebar {
+  min-width: 9.9%;
+  height: 100%;
+  padding: 0.625rem 0;
+  background: var(--sidebar-bgc);
+  color: var(--sidebar-txt);
+  overflow-y: auto;
+  z-index: 88; 
+}
+
+.sidebar-wrap {
+  width: 100%;
+  height: 100%;
+  padding: 0.625rem;
+  z-index: 9999; 
+}
+
+.sidebar-wrap a {
+  display: flex;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 0.625rem;
+  padding: 1rem;
+  color: var(--sidebar-txt);
+  border-radius: 0.5rem;
+  transition: 200ms;
+  gap: 1rem;
+  /* 初始狀態 */
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 1s;
+}
+
+.sidebar-wrap a:last-child {
+  margin-bottom: 0;
+}
+
+
+.sidebar-wrap a:hover,
+.sidebar-wrap a.active {
+  background: var(--sidebar-item-bgc);
+}
+
+.sidebar-wrap a i {
+  width: 30px;
+  text-align: center;
+  /* color: var(--sidebar-txt); */
+  color: #0085b9;
+  flex-grow: 0;
+}
+
+.sidebar-wrap a span {
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* 側邊欄顯示 */
+.sidebar.active {
+  left: 0;
+  /* 滑出側邊欄 */
+}
+
+/* 漢堡按鈕 */
+.burger-switch {
+  /* 預設隱藏 */
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 15px;
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+.burger-switch:hover {
+  background: rgb(213, 244, 255);
+}
+@keyframes sidebar_slidein {
+    from {
+        transform: translateX(-30px);
+        visibility: visible; /* 開始時讓元素可見 */
+    }
+    to {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+/* 大於 1200px 時顯示側邊欄 */
+@media screen and (min-width: 1201px) {
+  .sidebar {
+    display: block;
+    /* 確保側邊欄顯示 */
+    position: fixed;
+	left: 0;
+    /* 恢復側邊欄的位置，移除固定 */
+    min-width: 200px;
+    /* 根據需要設定寬度 */
+    height: fit-content;
+    background: var(--sidebar-bgc);
+    color: var(--sidebar-txt);
+	transition: left 0.6s ease;
+  }
+  .main {
+    padding-left:200px;
+	transition: padding-left 0.6s ease;
+  }
+  .main-content{
+    z-index:88;
+  }
+  .sidebar-wrap a {
+    /* 先隱藏，避免閃爍 */
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: sidebar_slidein 0.3s ease-out forwards;
+  }
+
+  /* 讓每個選項加入延遲 */
+  .sidebar-wrap a:nth-child(1) { animation-delay: 0.1s; }
+  .sidebar-wrap a:nth-child(2) { animation-delay: 0.2s; }
+  .sidebar-wrap a:nth-child(3) { animation-delay: 0.3s; }
+  .sidebar-wrap a:nth-child(4) { animation-delay: 0.4s; }
+  .sidebar-wrap a:nth-child(5) { animation-delay: 0.5s; }
+  .sidebar-wrap a:nth-child(6) { animation-delay: 0.6s; }
+  .sidebar-wrap a:nth-child(7) { animation-delay: 0.7s; }
+  .sidebar-wrap a:nth-child(8) { animation-delay: 0.8s; }
+
+  /* 當屏幕大於 1200px 時，漢堡選單不顯示 */
+  .burger-switch {
+    display: none;
+  }
+}
+
+/* 小於 1200px 時側邊欄隱藏 */
+@media screen and (max-width: 1200px) {
+  .sidebar {
+    position: fixed;
+    top: 92px;
+    left: -250px;
+    /* 初始隱藏，並可通過漢堡選單顯示 */
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.6s ease;
+    /* 過渡效果 */
+    z-index: 999;
+    background: var(--sidebar-bgc);
+    color: var(--sidebar-txt);
+	border-top: 0.3rem solid var(--primary-bgc);
+  }
+  .main {
+    padding-left:0;
+	transition: padding-left 0.6s ease;
+  }
+  /* 當側邊欄 active 時，顯示側邊欄 */
+  .sidebar.active {
+    left: 0;
+    /* 側邊欄顯示 */
+  }
+
+  /* 漢堡選單顯示在小螢幕 */
+  .burger-switch {
+    display: block;
+    position: relative;
+    top: -8px;
+    left: -15px;
+    z-index: 1000;
+    background-color: var(--burger-bg);
+    color: var(--primary-txt);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s;
+	animation: sidebar_slidein 0.6s ease;
+  }
+  body.sidebar-open {
+    position: fixed;  /* 固定住畫面 */
+    width: 100%;
+  }
+  body.sidebar-open .f-container::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* 半透明黑色遮罩 */
+    backdrop-filter: blur(5px); /* 整體模糊 */
+    z-index: 5; /* 確保它在內容的上層 */
+  }
+}
+
+/* 側邊欄滑入動畫 */
+@keyframes sidebar_slidein {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

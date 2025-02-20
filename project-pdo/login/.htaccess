@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# 這條規則將 "/index.php" 重寫為 "/"
+RewriteCond %{THE_REQUEST} \ /redirect\.php\ HTTP/
+RewriteRule ^index\.php$ / [R=301,L]
+
+# 這條規則會將其他所有請求重定向到 index.php
+RewriteCond %{HTTP_REFERER} ^https?://[^/]+/([^/]+)/index\.php$ [NC]
+RewriteRule ^$ /%1/index.php [L]
+ErrorDocument 404 /404.html

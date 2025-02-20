@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
   //預設深色模式
   function setDarkTheme() {
     root.style.setProperty("--primary-txt", "#fff"); //深色模式文字顏色
-    root.style.setProperty("--primary-bgc", "#222"); //深色模式背景顏色
-    root.style.setProperty("--secondary-bgc", "#111"); //深色模式navbar背景顏色
+    root.style.setProperty("--primary-bgc", "#111"); //深色模式背景顏色
+    root.style.setProperty("--secondary-bgc", "#222"); //深色模式navbar背景顏色
     root.style.setProperty("--card-hover", "#333"); //深色模式滑鼠移置卡片時背景顏色
 	//root.style.setProperty("--notification-h1", "#ffbb0080");
     root.style.setProperty("--nottification-bg", "#333");
@@ -118,13 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (savedMode === "dark") {
     //=== 嚴格相等;需要資料類型和值都相等才算相等
     document.body.classList.add("dark");
-	setDarkTheme(); //使用主題顏色
-	moon.classList.remove("fa-moon");
+	  setDarkTheme(); //使用主題顏色
+	  moon.classList.remove("fa-moon");
     moon.classList.add("fa-sun"); //移除月亮標誌，改為太陽
     switchButton.checked = true; //確認有勾選(深色模式)
   } else {
     document.body.classList.add("light");
-	 setBlackGoldTheme(); //使用主題顏色
+    setLightTheme();
     moon.classList.remove("fa-sun");
     moon.classList.add("fa-moon");
     switchButton.checked = false; //確認未勾選(淺色模式)
@@ -136,14 +136,14 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.remove("light");
       document.body.classList.add("dark");
       localStorage.setItem("theme", "dark"); // 儲存至localStorage
-      setDarkTheme();
+      setLightTheme();
       moon.classList.remove("fa-moon");
       moon.classList.add("fa-sun");
     } else {
       document.body.classList.remove("dark");
       document.body.classList.add("light");
       localStorage.setItem("theme", "light");
-      setBlackGoldTheme();
+     setDarkTheme();
       moon.classList.remove("fa-sun");
       moon.classList.add("fa-moon");
     }

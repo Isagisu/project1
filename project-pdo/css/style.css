@@ -1,0 +1,341 @@
+:root {
+  --primary-bgc: #f0f0f0;
+  --primary-txt: #000;
+
+  --secondary-bgc: #fff;
+  --card-hover: #ffeeee;
+  --border-clr: #e5e5e5;
+  --notification-h1: linear-gradient(
+    90deg,
+    rgba(205, 255, 237, 0.9) 0%,
+    rgba(0, 172, 255, 0.9) 100%
+  );
+  --nottification-bg: rgba(255, 255, 255, 0.8);
+  --topnav-bgc: var(--secondary-bgc);
+  --topnav-txt: var(--primary-txt);
+
+  --input-clr: #ff7186;
+
+  --notification-i-clr: #ffaa00;
+  --user-i-clr: #008cff;
+  --theme-i-clr: rgb(243, 216, 120);
+
+  --sidebar-bgc: var(--secondary-bgc);
+  --sidebar-txt: var(--primary-txt);
+  --sidebar-item-bgc: #ffbb0080;
+  --burger-bg: rgba(255, 255, 255, 0.8);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Microsoft JhengHei UI', Arial, Helvetica, sans-serif !important;
+  scroll-behavior: auto;
+}
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+#themeSwitch {
+  display: none;
+}
+
+img {
+  max-width: 100%;
+}
+.badge {
+  --bs-badge-padding-x: 0.65em;
+  --bs-badge-padding-y: 0.35em;
+  --bs-badge-font-size: 0.75em;
+  --bs-badge-font-weight: 700;
+  --bs-badge-color: #fff;
+  --bs-badge-border-radius: var(--bs-border-radius);
+  display: inline-block;
+  padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+  font-size: var(--bs-badge-font-size);
+  font-weight: var(--bs-badge-font-weight);
+  line-height: 1;
+  color: var(--bs-badge-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--bs-badge-border-radius);
+}
+.badge:empty {
+  display: none;
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+.f-container {
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-bgc);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.main-content {
+  min-width: 89.9%;
+  height: 100%;
+  background: var(--primary-bgc);
+}
+
+.main-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem 0 5rem;
+  background: var(--secondary-bgc);
+  border-top: 0.25rem solid var(--primary-bgc);
+}
+
+.footer .copyright {
+  text-align: center;
+  color: #777;
+}
+
+.footer .copyright i {
+  margin-right: 0.325rem;
+}
+
+.footer .version {
+  margin-left:0.625rem;
+}
+/* 以下是原本Style.css內容 */
+/* 會員區塊 */
+.member {
+  display: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(35px);
+}
+/* 動畫 */
+#memberArea {
+  background: var(--nottification-bg);
+  backdrop-filter: blur(10px);
+  animation: dropdown-fade 0.3s ease;
+}
+#memberArea a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+} /*
+@keyframes dropdown-fade {
+  from {
+    opacity: 0;
+    transform: translateY(0) translateX(-35%) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(20) translateX(-35%) scale(1);
+  }
+}
+/* 傳送到最上面按鈕 */
+#GoTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 9999999;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #d0e2fd;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  transition: width 2s ease 0.5s;
+}
+.gotopSideL {
+  animation: topbtnleft 0.8s ease forwards;
+}
+.gotopSideR {
+  animation: topbtnright 0.5s ease forwards;
+}
+
+/* 載入點點 */
+.loding_dots::after {
+  content: ' ';
+  display: inline-block;
+  animation: loding_dots 1.5s steps(4, end) infinite;
+}
+@keyframes loding_dots {
+  0%,
+  100% {
+    content: ' ';
+  }
+  25% {
+    content: '.';
+  }
+  50% {
+    content: '..';
+  }
+  75% {
+    content: '...';
+  }
+}
+
+/* 公告欄導覽列 */
+.pagination {
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.pagination a,
+.pagination strong {
+  display:block;
+  padding: 6px 12px;
+  margin: 0 3px;
+  border-radius: 10px;
+  border: 2px solid #87ceeb;
+  text-decoration: none;
+  color: var(--primary-txt);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #87ceeb;
+  color: white;
+  border-color: #87ceeb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pagination strong {
+  background-color: #58B2DC;
+  color: white;
+  border-color: #58B2DC;
+}
+
+.pagination .disabled {
+  color: #aaa;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+.pagination .icon {
+  font-size: 16px;
+  vertical-align: middle;
+}
+.pagination .page-link {
+  color: var(--primary-txt);
+}
+@media screen and (min-width: 769px) {
+  #GoTop:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-content {
+    min-width: 100%;
+  }
+}
+.animation {
+  animation: news_animation 0.5s ease-out;
+}
+
+@keyframes news_animation {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes weather_ani_02 {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes weather_ani_07 {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes weather_location {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.weather_ani_01 {
+  animation: rotate 0.8s ease-out;
+}
+.weather_ani_02 {
+  animation: weather_ani_02 0.8s ease-out;
+}
+.weather_ani_07 {
+  animation: weather_ani_07 0.8s ease-out;
+}
+.weather_ani_42 {
+  animation: rotate 3s ease-out;
+}
+.weather_location {
+  animation: weather_location 0.8s ease-out;
+}
+@keyframes topbtnleft {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-10px);
+  }
+}
+@keyframes topbtnright {
+  from {
+    opacity: 1;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}

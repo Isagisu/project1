@@ -109,7 +109,7 @@ a {
   justify-content: center;
 }
 .content-left .category-page a {
-  background: #fff;
+  background: var(--secondary-bgc);
   color: var(--primary-txt);
   border: 2px solid lightgray;
   border-radius: 0.5rem;

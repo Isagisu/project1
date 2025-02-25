@@ -39,8 +39,8 @@ let scrollPosition = 0;
         !sidebar.contains(e.target) &&
         !burgerBtn.contains(e.target) &&
         !e.target.classList.contains("slider") &&
-        (!prev || !prev.contains(e.target)) && // 檢查 prev 是否存在
-        (!next || !next.contains(e.target))    // 檢查 next 是否存在
+        (typeof prev === "undefined" || !prev.contains(e.target)) && // 檢查 prev 是否存在
+        (typeof next === "undefined" || !next.contains(e.target))    // 檢查 next 是否存在
     ) 
 	{
         sidebar.classList.remove("active");

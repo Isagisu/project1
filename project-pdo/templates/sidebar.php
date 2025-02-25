@@ -16,12 +16,16 @@
       <i class="fa-solid fa-star"></i>
       <span>精選文章</span>
     </a>
-    <a href="#">
+    <a href="./category">
       <i class="fa-solid fa-folder"></i>
       <span>看板分類</span>
-    </a>	  
+    </a>		
 	<?php if (isset($_SESSION["login_session"]) && $_SESSION["login_session"] == true) {?>
-    <a href="../user/profile.php">
+    <a href="./favoriteboards">
+      <i class="fa-solid fa-folder"></i>
+      <span>我的收藏</span>
+    </a>	
+    <a href="../profile">
       <i class="fa-solid fa-users"></i>
       <span>會員中心</span>
     </a>	 

@@ -152,61 +152,52 @@ function topFunction() {
     // }, 1000); // 與 transition 時間一致
 // });
 
-function agreeAccept() 
-{
-	 var checkBox = document.getElementById("agree");	
-	 if (checkBox.checked == true){
-		(async () => {
-		  const { value: accept } = await Swal.fire({
-			title: "論壇規則與條款",
-			input: "checkbox",
-			inputValue: 0,
-			inputPlaceholder: `
-			  我已詳細閱讀並同意論壇的規則與條款
-			`,
-			confirmButtonText: `
-			  同意&nbsp;<i class="fa fa-arrow-right"></i>
-			`,
-			inputValidator: (result) => {
-			  return !result && "請閱讀並同意論壇的規則與條款";
-			}
-		  });
-		  // if (accept) {
-			      // Swal.fire({
-				  // title: "感謝您同意論壇規則！😊",
-				  // icon: "success",
-				  // confirmButtonText: "繼續"
-				// });
-		  // }
-		})()
-	 }
+function agreeAccept() {	
+  (async () => {
+    const { value: accept } = await Swal.fire({
+      title: "論壇規則與條款",
+      input: "checkbox",
+      inputValue: 0,
+      allowEscapeKey: false,
+      allowOutsideClick: false,
+      inputPlaceholder: "我已詳細閱讀並同意論壇的規則與條款",
+      html: `<a href="#" onclick="agreelist()">規則與條款</a>`,
+      confirmButtonText: `同意&nbsp;<i class="fa fa-arrow-right"></i>`,
+      inputValidator: (result) => {
+        return !result && "請閱讀並同意論壇的『規則與條款』";
+      }
+    });
+
+    // 如果使用者在 SweetAlert2 內勾選了 checkbox，則勾選外部的 checkbox
+    if (accept)
+      document.getElementById("agree").checked = true; 	
+  })();
 }
-function agreelist() 
-{
-	Swal.fire({
-	  html:
-		"<div style='text-align: center; font-family: Arial, sans-serif; padding: 20px;'>" +
-		"<div style='font-size: 48px; color: #6a5acd; margin-bottom: 10px;'>📜</div>" +
-		"<h2>請遵守以下規則</h2>" +
-		"<ol style='text-align: left; max-width: 400px; margin: 0 auto; font-size: 16px; line-height: 1.8;'>" +
-		"    <li>尊重其他會員，不得發表冒犯或侮辱性言論。</li>" +
-		"    <li>禁止發布任何形式的垃圾廣告或違法內容。</li>" +
-		"    <li>請確保您的文章與論壇主題相關。</li>" +
-		"    <li>禁止未經授權的版權內容分享。</li>" +
-		"    <li>管理員保留刪除違規內容的權利。</li>" +
-		"</ol>" +
-		"</div>",
-	  cancelButtonText: "關閉",
-	  willOpen: () => {
-		document.body.style.overflow = 'hidden'; // 禁用滾動
-		document.body.style.paddingRight = '0px'; // 防止捲動條寬度影響
-	  },
-	  showConfirmButton: false,
-	   showCancelButton: true,
-	   backdrop: `
-    rgba(0,0,0,0.4)
-    left top
-    no-repeat
-  `
-	});
+
+function agreelist() {
+  Swal.fire({
+    html: `
+      <div style='text-align: center; font-family: Arial, sans-serif; padding: 20px;'>
+        <div style='font-size: 48px; color: #6a5acd; margin-bottom: 10px;'>📜</div>
+        <h2>請遵守以下規則</h2>
+        <ol style='text-align: left; max-width: 400px; margin: 0 auto; font-size: 16px; line-height: 1.8;'>
+          <li>尊重其他會員，不得發表冒犯或侮辱性言論。</li>
+          <li>禁止發布任何形式的垃圾廣告或違法內容。</li>
+          <li>請確保您的文章與論壇主題相關。</li>
+          <li>禁止未經授權的版權內容分享。</li>
+          <li>管理員保留刪除違規內容的權利。</li>
+        </ol>
+      </div>`,
+    cancelButtonText: "關閉",
+    allowEscapeKey: false,
+    allowOutsideClick: false,
+    showConfirmButton: false,
+    showCancelButton: true,
+    backdrop: `rgba(0,0,0,0.4) left top no-repeat`,
+    
+    // 當關閉條款視窗時，回到 agreeAccept()
+    didClose: () => {
+      agreeAccept();
+    }
+  });
 }

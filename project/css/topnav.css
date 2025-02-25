@@ -12,13 +12,13 @@
   z-index: 99;
   overflow: hidden;
 }
-.topnavhide{
-	transform:translateY(-350px);
-	opacity:0;
-	transition:0.8s ease;
+.topnavhide {
+  transform: translateY(-350px);
+  opacity: 0;
+  transition: 0.8s ease;
 }
-.topnavshow{
-	animation:topnavshow 0.5s ease;
+.topnavshow {
+  animation: topnavshow 0.5s ease;
 }
 @keyframes topnavshow {
   from {
@@ -44,7 +44,7 @@
 
 .nav-left .logo {
   /* width: fit-content; */
-  width:70px;
+  width: 70px;
   height: auto;
   text-align: center;
 }

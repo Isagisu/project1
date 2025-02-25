@@ -7,12 +7,12 @@ require "./Function.php";
 if (isset($_SESSION["login_session"]) && $_SESSION["login_session"] == true) {
   $user = $_SESSION["profile"];
   $row = GetUser($user);
-  $userimg = $row['profile'];
+  $userimg = DEFAULT_DIR.$row['profile'];
   $uuid = $row["uuid"];
   $userid = $row["userid"];
   $nickname = $row["nickname"];
   $email = $row["email"];
-  $regdate = $row["regdate"];
+  $regdate = $row["regdate"];  
   $birthday = $row["birthday"];
   $friend = $link->query("SELECT * FROM `friends` inner join account where friends.friend_uuid=account.uuid and status=1 and friends.uuid='$uuid'");
 

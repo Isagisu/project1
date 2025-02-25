@@ -8,7 +8,7 @@ userinfoIcon.addEventListener("click", () => {
 
 // 點擊其他地方時關閉通知列表
 document.addEventListener("click", (event) => {
-  if (!userinfoIcon.contains(event.target) && !userinfo.contains(event.target) && (!prev || !prev.contains(event.target)) && (!next || !next.contains(event.target))) 
+  if (!userinfoIcon.contains(event.target) && !userinfo.contains(event.target) && (typeof prev === "undefined"  || !prev.contains(event.target)) && (typeof next === "undefined" || !next.contains(event.target))) 
   {
     userinfo.classList.remove("active");
   }

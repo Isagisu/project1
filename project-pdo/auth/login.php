@@ -116,14 +116,14 @@ if ($user != "" && $pw != "") {
     $_SESSION["login_session"] = true;
     //自己寫的Function
     // swalertAuto("success", "登入成功!", "", "center");
-	$_SESSION['register_success'] = '登入成功';
-	header("location:/");
+    $_SESSION['toast_tip'] = '登入成功';
+    header("location:/");
     //這個函數沒有寫跳轉，所以手動跳轉
     // echo "<script>
-        // setTimeout(function(){
-        // window.location='/';
-        // },1300);
-        // </script>";
+    // setTimeout(function(){
+    // window.location='/';
+    // },1300);
+    // </script>";
   }
   // 登入失敗
   else {

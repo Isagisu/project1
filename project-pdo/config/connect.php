@@ -12,7 +12,7 @@ $options = [
 try {
   // 使用 PDO 連接資料庫
   $link = new PDO($dsn, dbuser, dbpassword, $options);
-  $link->exec("SET CHARACTER SET utf8");
+  $link->exec("SET CHARACTER SET utf8mb4");
 } catch (PDOException $e) {
 	echo "<link href='https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css' rel='stylesheet'>";
 	echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js'></script>";	
@@ -29,8 +29,6 @@ try {
 			}).then(function(result) {
 				if (result.value) {
 					window.location.href = '$url';
-				} else {
-					Swal.fire("您選擇了Cancel");
 				}
 			});
 		</script>

@@ -8,7 +8,7 @@ notifyIcon.addEventListener("click", () => {
 
 // 點擊其他地方時關閉通知列表
 document.addEventListener("click", (event) => {
-  if (!notifyIcon.contains(event.target) && !notifications.contains(event.target) && (!prev || !prev.contains(event.target)) && (!next || !next.contains(event.target))) 
+  if (!notifyIcon.contains(event.target) && !notifications.contains(event.target) && (typeof prev === "undefined" || !prev.contains(event.target)) && (typeof next === "undefined" || !next.contains(event.target))) 
   {
     notifications.classList.remove("active");
   }

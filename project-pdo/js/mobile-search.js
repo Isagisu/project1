@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (
       !searchBox.contains(e.target) &&
       !searchButton.contains(e.target) &&
-      (!prev || !prev.contains(e.target)) && // 檢查 prev 是否存在
-      (!next || !next.contains(e.target))    // 檢查 next 是否存在
+      (typeof prev === "undefined" || !prev.contains(e.target)) && // 檢查 prev 是否存在
+      (typeof next === "undefined" || !next.contains(e.target))    // 檢查 next 是否存在
     ) {
       searchBox.classList.remove("active");
     }

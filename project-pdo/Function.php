@@ -1,4 +1,5 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -18,14 +19,13 @@ function uuid()
 }
 function getverificationcode($length)
 {
-	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	$randomString = '';
-	for($i=0;$i<$length;$i++)
-	{
-		$index=random_int(0,strlen($characters)-1);
-		$randomString.=$characters[$index];
-	}
-	return $randomString;
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $randomString = '';
+  for ($i = 0; $i < $length; $i++) {
+    $index = random_int(0, strlen($characters) - 1);
+    $randomString .= $characters[$index];
+  }
+  return $randomString;
 }
 function swalert($icon, $title, $msg, $url)
 {
@@ -106,38 +106,38 @@ function GetUser($user)
 }
 function SendMail($email, $content)
 {
-    $mail = new PHPMailer(true);
+  $mail = new PHPMailer(true);
 
-    try {
-        // SMTP 配置
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-		$mail->SMTPKeepAlive = true;
-        $mail->Username = 'rastyed07@gmail.com'; // SMTP 帳號
-        $mail->Password = 'kmpv ctnb iwup vvry'; // SMTP 密碼 (App Password)
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
+  try {
+    // SMTP 配置
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->SMTPKeepAlive = true;
+    $mail->Username = 'rastyed07@gmail.com'; // SMTP 帳號
+    $mail->Password = 'kmpv ctnb iwup vvry'; // SMTP 密碼 (App Password)
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
 
-        // 信件內容編碼方式
-        $mail->CharSet = 'utf-8';
-        $mail->Encoding = 'base64';
+    // 信件內容編碼方式
+    $mail->CharSet = 'utf-8';
+    $mail->Encoding = 'base64';
 
-        // 收件人
-        $mail->setFrom('rastyed07@gmail.com', '論壇專題網站'); //寄件人
-        $mail->addAddress($email);
+    // 收件人
+    $mail->setFrom('rastyed07@gmail.com', '論壇專題網站'); //寄件人
+    $mail->addAddress($email);
 
-        // 郵件內容
-        $mail->isHTML(true);
-        $mail->Subject = 'Test Email';
-        $mail->Body    = $content;
-        $mail->AltBody = strip_tags($content);
+    // 郵件內容
+    $mail->isHTML(true);
+    $mail->Subject = 'Test Email';
+    $mail->Body    = $content;
+    $mail->AltBody = strip_tags($content);
 
-        $mail->send();
-		$_SESSION['register_success'] = '寄信成功請至您的信箱收取信件';
-        // echo "郵件寄送成功!";
-		// swalertAuto("success","寄信成功請至您的信箱收取信件","","center");	
-    } catch (Exception $e) {
-		swalert("error", "郵件寄送失敗.", "錯誤訊息: {$mail->ErrorInfo}", "");
-    }
+    $mail->send();
+    $_SESSION['toast_tip'] = '寄信成功請至您的信箱收取信件';
+    // echo "郵件寄送成功!";
+    // swalertAuto("success","寄信成功請至您的信箱收取信件","","center");
+  } catch (Exception $e) {
+    swalert("error", "郵件寄送失敗.", "錯誤訊息: {$mail->ErrorInfo}", "");
+  }
 }

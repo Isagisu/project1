@@ -200,8 +200,8 @@
                 <label>確認密碼</label>
               </div>
               <div class="remember-forgot">
-                <label><input type="checkbox" id="agree" onclick="agreeAccept()" required>我同意遵守<a href="#"
-                    onclick="agreelist()">ボボ論壇使用協議</a></label>
+                <label><input type="checkbox" id="agree" onclick="agreeAccept()" disabled>我同意遵守<a href="#"
+                    onclick="agreeAccept()">ボボ論壇使用協議</a></label>
               </div>
               <button type="submit" class="btn-register" id="btn-register">註冊</button>
 
@@ -230,15 +230,15 @@
     </div> <!-- .nav-group -->
 	
     <!-- 發送郵件成功提示 -->
-    <?php if (!empty($_SESSION['register_success'])): ?>
+    <?php if (!empty($_SESSION['toast_tip'])): ?>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
                     toast: true,
                     icon: 'success',
-                    title: '<?= htmlspecialchars($_SESSION['register_success'], ENT_QUOTES) ?>',
+                    title: '<?= htmlspecialchars($_SESSION['toast_tip'], ENT_QUOTES) ?>',
                     position: 'top',
-					width: 400,
+					width: 450,
                     showConfirmButton: false,
                     timer: 3000,
 					timerProgressBar: true,
@@ -249,7 +249,7 @@
                 });
             });
         </script>
-        <?php unset($_SESSION['register_success']); ?>
+        <?php unset($_SESSION['toast_tip']); ?>
     <?php endif; ?>
 	
   </nav> <!-- .nav-right -->

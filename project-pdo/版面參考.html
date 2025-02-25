@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Forum Layout</title>
+
+   <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="shortcut icon" href="./img/Alolan Marowak.png">
+  <link rel="stylesheet" href="./css/style.css"> <!-- base       -->
+  <link rel="stylesheet" href="./css/topnav.css"> <!-- topnav     -->
+  <link rel="stylesheet" href="./css/sidebar.css"> <!-- sidebar    -->
+  <link rel="stylesheet" href="./css/main.css"> <!-- main       -->
+  <!-- component style  -->
+  <link rel="stylesheet" href="./css/article.css">
+  <link rel="stylesheet" href="./css/board.css">
+  <link rel="stylesheet" href="./css/slider.css">
+  <link rel="stylesheet" href="./css/notifications.css">
+  <link rel="stylesheet" href="./css/dropdown.css">
+  <!-- SweetAlert2  -->
+  <link href='https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css' rel='stylesheet'>
+  <!-- <link rel="stylesheet" href="./css/loading.css"> -->
+  <!-- Bootstrap v5.3.3 min.css -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap-grid.css' />
+  <!-- Bootstrap v5.3.3 min.css -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap-utilities.css' />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/81c16f2f84.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="f-container">
+
+    <header class="topnav">
+
+      <nav class="nav-left">
+        <div class="logo">
+          <a href="index.html" title="Forum Layout">
+            <img src="./img/rabbit.gif" alt="">
+            <img src="./img/rabbit.gif" alt="" style="transform: rotateY(180deg);">
+          </a>
+        </div> <!-- .logo -->
+      </nav> <!-- .nav-left -->
+
+      <nav class="nav-center">
+        <div class="search">
+          <form action="">
+            <label>
+              <input type="text" name="search" id="search">
+              <button class="" onclick=""><i class="fa-solid fa-magnifying-glass"></i></button>
+            </label>
+          </form>
+        </div> <!-- .search -->
+      </nav> <!-- .nav-center -->
+
+      <nav class="nav-right">
+        <div class="nav-group">
+          <button class="notification" onclick=""><i class="fa-solid fa-bell"></i></button>
+          <button class="user" onclick=""><i class="fa-solid fa-user"></i></button>
+          <button class="theme" onclick=""><i class="fa-solid fa-moon"></i></button>
+        </div> <!-- .nav-group -->
+      </nav> <!-- .nav-right -->
+
+    </header> <!-- .topnav -->
+
+
+    <main class="main">
+
+      <aside class="sidebar">
+        <div class="sidebar-wrap">
+          <a href="#" class="active">
+            <i class="fa-solid fa-house"></i>
+            <span>首頁</span>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>最新消息</span>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>活動資訊</span>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-star"></i>
+            <span>精選文章</span>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-folder"></i>
+            <span>看板分類</span>
+
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-bookmark"></i>
+            <span>收藏文章</span>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-users"></i>
+            <span>會員中心</span>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-gear"></i>
+            <span>設定</span>
+          </a>
+        </div> <!-- /sidebar-wrap -->
+      </aside> <!-- .sidebar -->
+
+      <div class="main-content">
+        <div class="main-wrap">
+
+          <div class="slider">
+            <div class="slider-list">
+              <div class="slider-item"><img src="./img/Northshire-Abbey-by-ONE_RAMM.png" alt=""></div>
+              <div class="slider-item"><img src="./img/Killua-Zoldyck-by-Patrika-1.png" alt=""></div>
+              <div class="slider-item"><img src="./img/Killua-Zoldyck-by-Patrika-2.png" alt=""></div>
+              <div class="slider-item"><img src="./img/Satoru Gojo Jujutsu Kaisen by patrika.png" alt=""></div>
+              <div class="slider-item"><img src="./img/Shoto-Todoroki-Izuku-Midoriya-Katsuki-Bakugou-by-SHIN.png" alt=""></div>
+              <div class="slider-item"><img src="./img/Levi-Ackerman-by-Yuki-Neh.png" alt=""></div>
+            </div>
+            <div class="slider-btns">
+              <button id="prev"><i class="fa-solid fa-chevron-left"></i></button>
+              <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <ul class="dots">
+              <li class="active"></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div> <!-- .slider -->
+
+          <div class="content">
+
+            <div class="content-left">
+			
+             <a href="#" class="new-article">
+                <h2>三人課堂新人。</h2>
+                <p>一個月理論工程請求聽到支撐更多，領導股權反應依法改怖我對第二次，管理完善股市那種這位高速篇文章至少選項整體各國臺東先生。</p>
+                <div class="icon-group">
+                  <div class="icon-group-left">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-share"></i>
+                  </div>
+                  <div class="icon-group-right">
+                    <i class="fa-solid fa-paw"></i>
+                    <i class="fa-solid fa-bookmark"></i>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="new-article">
+                <h2>整理特性眼裡習慣。</h2>
+                <p>邀請研究所達到隨後參考心情雙方溝通返回日月潭機械，不可幫助留在日前激烈儘量風險早上魯蛇見到資訊網，第一章一年建議農民環保引用瀏覽和我總部花園，缺乏搜尋引擎計算機堅決試試孩子思維接近因為建立創業，推薦反饋隱藏版大門精英，論文出現在，承受忍不住還是姓名給予典型十年科學音樂，規定家庭你有錯誤事故筆記本自信方法宣佈轉帖合同市委谷歌，美麗事故教育活動，尤其是故事五年，為您研究特殊維持有點遠烏日採用在這裡通。</p>
+                <div class="icon-group">
+                  <div class="icon-group-left">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-share"></i>
+                  </div>
+                  <div class="icon-group-right">
+                    <i class="fa-solid fa-paw"></i>
+                    <i class="fa-solid fa-bookmark"></i>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="new-article">
+                <h2>社會主義對於平方。</h2>
+                <p>動物到底新增下了開發者大會一場手段做到檔案公佈爸爸低價，看起來民間，別的清晰寫真進攻諮詢性別協調抱著老人本頁和平寫出來簡歷我都，對著依靠會議看見一週透明沒什麼最好的硬體決策一人，公佈完美很大，成了音。
+                </p>
+                <div class="icon-group">
+                  <div class="icon-group-left">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-share"></i>
+                  </div>
+                  <div class="icon-group-right">
+                    <i class="fa-solid fa-paw"></i>
+                    <i class="fa-solid fa-bookmark"></i>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="new-article">
+                <h2>食品硬體說到兄弟法。</h2>
+                <p>怎樣創新總結財產規則，招標地球到底依法裝備來了核心大眾辦公室石油，編號歡迎光臨互相生產她們萬元你可以輸入肯定在那裡，紅色實業飛機各位特別是體現不好意思廣播醫院以及，窗口黑暗，一份。</p>
+                <div class="icon-group">
+                  <div class="icon-group-left">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-share"></i>
+                  </div>
+                  <div class="icon-group-right">
+                    <i class="fa-solid fa-paw"></i>
+                    <i class="fa-solid fa-bookmark"></i>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="new-article">
+                <h2>一批擴大那位總是。</h2>
+                <p>信箱通過保留進攻臺灣衝突性別體會父母問道一下子，貼布前面影音像素最為吸收，特徵資源，整個垃圾我很少年這段那個點這裡下載類別禮品，項目影響群眾管理系統足球只需執法快捷信譽超級戰鬥動作，球員重量房價猶豫筆記本，新鮮報名使用社區都能，要去還能戰。</p>
+                <div class="icon-group">
+                  <div class="icon-group-left">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-share"></i>
+                  </div>
+                  <div class="icon-group-right">
+                    <i class="fa-solid fa-paw"></i>
+                    <i class="fa-solid fa-bookmark"></i>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="new-article">
+                <h2>大約說出指揮繼續走。</h2>
+                <p>我都丈夫教師會有只不過生產不多東西工作，告訴不僅檢索有個的人建設，回事廠商看不到小遊戲賓館優勢處理變成優點過來程度處理器自行，進攻億元馬上已經開放反饋關閉現品，項目影響群眾管理系統足品，項目影響群眾管理系統足品，項目影響群眾管理系統足場難道發佈日期證據迅速，強烈世紀，標誌要有你說旅遊足夠，喜愛外觀學校，運行平台破解領先留學鄉民們便宜傳真周邊超級溫柔有所評估打算，本身而已，所。</p>
+                <div class="icon-group">
+                  <div class="icon-group-left">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-share"></i>
+                  </div>
+                  <div class="icon-group-right">
+                    <i class="fa-solid fa-paw"></i>
+                    <i class="fa-solid fa-bookmark"></i>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="new-article">
+                <h2>本站等方面國際網。</h2>
+                <p>儘快這時去了事實別人花園移動半年基本承受家人關鍵一道失去豪華，有關不可能這一不喜歡先進以上保密唯一一對，打了移動故意聯盟深深門派官方然而公共一次定位這次，部分課程不出幫你不需要專欄痛苦如有也能過去區別電源趕緊實在，財產長沙，小組點頭加速專輯它們，接收百姓有一些方法尤其是具備醫生大概房間將會外貿強化，限制公路望着我很教師電力把你出現推動的人看過規劃對她居然美。</p>
+                <div class="icon-group">
+                  <div class="icon-group-left">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-share"></i>
+                  </div>
+                  <div class="icon-group-right">
+                    <i class="fa-solid fa-paw"></i>
+                    <i class="fa-solid fa-bookmark"></i>
+                  </div>
+                </div>
+              </a>
+
+            </div> <!-- .content-left -->
+
+            <div class="content-right">
+              <div class="board">
+                <div class="board-heading">
+                  <i class="fa-solid fa-chalkboard"></i>
+                  <h2>公告欄</h2>
+                </div>
+                <div class="board-content">
+                  <ul>
+                    <li>
+                      <div class="board-item">
+                        <div class="date"><span class="note system">系統公告</span>2024/12/30</div>
+                        <a href="#">重要通知：系統將於下午進行維護，屆時將關閉部分功能，若造成不便敬請見諒。</a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="board-item">
+                        <div class="date"><span class="note selected">精選文章</span>2024.12.29</div>
+                        <a href="#">2024年最受歡迎的韓劇</a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="board-item">
+                        <div class="date"><span class="note selected">精選文章</span>2024.12.27</div>
+                        <a href="#">2024年最受歡迎專輯</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="weather">
+                <div class="weather-heading">
+                  <h2>天氣</h2>
+                  <i class="fa-solid fa-cloud"></i>
+                  <i class="fa-solid fa-wind"></i>
+                  <img src="./img/maltese1.gif" alt="線條小狗" width="80">
+                </div>
+              </div>
+            </div> <!-- .content-right -->
+
+          </div> <!-- .content -->
+
+            <div class="popular-article-group">
+            <a href="#" class="popular-article">
+              <h2>熱門文章</h2>
+              <p>講話掌握認識來電做什麼碩士，複雜山西笑。</p>
+            </a>
+            <a href="#" class="popular-article">
+              <h2>熱門文章</h2>
+              <p>廣泛類型數碼相機為了，殺手不僅，放棄日。</p>
+            </a>
+            <a href="#" class="popular-article">
+              <h2>熱門文章</h2>
+              <p>女朋友你的參觀相信提示訊息平均，回應組。</p>
+            </a>
+            <a href="#" class="popular-article">
+              <h2>熱門文章</h2>
+              <p>此次一本市委鄉民們想像很熱一下子用品至。</p>
+            </a>
+            <a href="#" class="popular-article">
+              <h2>熱門文章</h2>
+              <p>也沒網上影片尷尬其實老闆創意處理今年保。</p>
+            </a>
+            <a href="#" class="popular-article">
+              <h2>熱門文章</h2>
+              <p>權利周圍提醒體力我的筆者崗位基層，個性。</p>
+            </a>
+            <a href="#" class="popular-article">
+              <h2>熱門文章</h2>
+              <p>它們資訊食物消費尤其優秀西方裝置不好意。</p>
+            </a>
+
+          </div> <!-- .popular-article-group -->
+		  
+          </div> <!-- .article-group -->
+
+   <div class="other-article-group">
+
+            <div class="see-all">查看全部</div>
+            <a href="#" class="other-article">
+              <h2>其他文章</h2>
+              <small>2025.01.01 07:00</small>
+              <p>學歷圍繞之前，出售一條將會工作至今方面水果，作品裝備世紀一批老婆無論這時家裡適應成果實踐，二十暫時，服務減少，不但機關。</p>
+            </a>
+            <a href="#" class="other-article">
+              <h2>其他文章</h2>
+              <small>2024.12.25 14:25</small>
+              <p>我去說明，思想士兵擴大動物近日在這具體，值得主動會員利益共同硬體也會唯一不禁是誰執法面前無關，工資女性形象肌。</p>
+            </a>
+            <a href="#" class="other-article">
+              <h2>其他文章</h2>
+              <small>2024.11.08 10:23</small>
+              <p>硬盤答應上班和諧至今一些說什麼，網域名稱美容，重點予以臉色臉上，按照平台照片主板我有留下通過歐洲眼裡，女士幾年評分，治理來到一隻，資金她是，從。</p>
+            </a>
+            <a href="#" class="other-article">
+              <h2>其他文章</h2>
+              <small>2024.10.17 09:49</small>
+              <p>打擊曝光付出來的一旦需要攻擊方面，我的心轉貼，你在房產關鍵字，又有更大司機不要，印象渠道知名估計，主機貫徹從來沒老人答案雲林明確吸。</p>
+            </a>
+            <a href="#" class="other-article">
+              <h2>其他文章</h2>
+              <small>2024.10.13 21:15</small>
+              <p>接口不停總統工商只好，資產態度告知有限公司人生實業世紀湖口推出安排的人一年歲月，是我導航工業婦女一款兩年時候最好民族感覺可以用，遺憾聯繫方式則是精神也有快車而。</p>
+            </a>
+            <a href="#" class="other-article">
+              <h2>其他文章</h2>
+              <small>2024.09.23 16:37</small>
+              <p>劇情損失組成一套唯一新浪體現隱藏版，報紙作品不需要聯想，年輕人證據能否運動將來，說出責任編輯也想，結婚就是一定超級首次，概念有時，應當。</p>
+            </a>
+
+          </div> <!-- .other-article-group -->
+
+
+        </div> <!-- .main-wrap -->
+      </div> <!-- .main content -->
+
+    </main> <!-- .main -->
+
+
+    <footer class="footer">
+      <div class="copyright">
+        <small><i class="fa-regular fa-copyright"></i>copyright</small>
+      </div> <!-- .copyright -->
+    </footer> <!-- .footer -->
+
+  </div> <!-- .f-container -->
+
+
+  <script src="./js/script.js"></script>
+  <script src="./js/carousel.js"></script>
+</body>
+</html>

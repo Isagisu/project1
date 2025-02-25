@@ -9,7 +9,7 @@ require "connect.php";
 $query = "SELECT url,title FROM articles";
 $result = $link->query($query);
 
-$sliderData = [];
+$sliderData = [];s8                                                  
 
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
   $sliderData[] = $row;

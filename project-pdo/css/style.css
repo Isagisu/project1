@@ -14,7 +14,7 @@
   --topnav-bgc: var(--secondary-bgc);
   --topnav-txt: var(--primary-txt);
 
-  --input-clr: #ff7186;
+  --input-clr: #f18b8f;
 
   --notification-i-clr: #ffaa00;
   --user-i-clr: #008cff;
@@ -36,7 +36,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Microsoft JhengHei UI', Arial, Helvetica, sans-serif !important;
+  font-family: "Microsoft JhengHei UI", Arial, Helvetica, sans-serif !important;
   scroll-behavior: auto;
 }
 body {
@@ -118,7 +118,7 @@ img {
 }
 
 .footer .version {
-  margin-left:0.625rem;
+  margin-left: 0.625rem;
 }
 /* 以下是原本Style.css內容 */
 /* 會員區塊 */
@@ -175,23 +175,23 @@ img {
 
 /* 載入點點 */
 .loding_dots::after {
-  content: ' ';
+  content: " ";
   display: inline-block;
   animation: loding_dots 1.5s steps(4, end) infinite;
 }
 @keyframes loding_dots {
   0%,
   100% {
-    content: ' ';
+    content: " ";
   }
   25% {
-    content: '.';
+    content: ".";
   }
   50% {
-    content: '..';
+    content: "..";
   }
   75% {
-    content: '...';
+    content: "...";
   }
 }
 
@@ -205,7 +205,7 @@ img {
 
 .pagination a,
 .pagination strong {
-  display:block;
+  display: block;
   padding: 6px 12px;
   margin: 0 3px;
   border-radius: 10px;
@@ -225,9 +225,9 @@ img {
 }
 
 .pagination strong {
-  background-color: #58B2DC;
+  background-color: #58b2dc;
   color: white;
-  border-color: #58B2DC;
+  border-color: #58b2dc;
 }
 
 .pagination .disabled {

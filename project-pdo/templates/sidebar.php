@@ -5,7 +5,7 @@
       <span>首頁</span>
     </a>
     <a href="#">
-      <i class="fa-solid fa-newspaper"></i>
+      <i class="fa-solid fa-square-rss"></i>
       <span>最新消息</span>
     </a>
     <a href="#">
@@ -13,7 +13,7 @@
       <span>活動資訊</span>
     </a>
     <a href="#">
-      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-newspaper"></i>
       <span>精選文章</span>
     </a>
     <a href="./category">
@@ -22,7 +22,7 @@
     </a>		
 	<?php if (isset($_SESSION["login_session"]) && $_SESSION["login_session"] == true) {?>
     <a href="./favoriteboards">
-      <i class="fa-solid fa-folder"></i>
+      <i class="fa-solid fa-star"></i>
       <span>我的收藏</span>
     </a>	
     <a href="../profile">
